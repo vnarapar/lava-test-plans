@@ -35,20 +35,20 @@ def test_call_lava_test_plan_testcases(param):
     assert main() == 0
 
 
-# lt-qcom tests
-lt_qcom_project_device_path = "lava_test_plans/projects/lt-qcom/devices"
-lt_qcom_devices = [
-    os.path.basename(d) for d in glob.glob("lava_test_plans/projects/lt-qcom/devices/*")
+# meta-qcom tests
+meta_qcom_project_device_path = "lava_test_plans/projects/meta-qcom/devices"
+meta_qcom_devices = [
+    os.path.basename(d) for d in glob.glob("lava_test_plans/projects/meta-qcom/devices/*")
 ]
-assert len(lt_qcom_devices) > 0
-lt_qcom_testplans = ["lt-qcom/kernel"]
-assert len(lt_qcom_testplans) > 0
-lt_qcom_variable_input_file = "projects/lt-qcom/variables.yaml"
+assert len(meta_qcom_devices) > 0
+meta_qcom_testplans = ["meta-qcom/kernel"]
+assert len(meta_qcom_testplans) > 0
+meta_qcom_variable_input_file = "projects/meta-qcom/variables.yaml"
 tests = []
-for device in lt_qcom_devices:
-    for testplan in lt_qcom_testplans:
+for device in meta_qcom_devices:
+    for testplan in meta_qcom_testplans:
         tests.append(
-            (lt_qcom_variable_input_file, device, testplan, lt_qcom_project_device_path)
+            (meta_qcom_variable_input_file, device, testplan, meta_qcom_project_device_path)
         )
 
 
