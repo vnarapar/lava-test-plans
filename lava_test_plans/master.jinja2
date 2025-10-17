@@ -6,6 +6,7 @@
 {% set install_fastboot_timeout = install_fastboot_timeout|default(10) %}
 {# fastboot_deploy_timeout is for 'to: fastboot' targets only #}
 {% set fastboot_deploy_timeout = fastboot_deploy_timeout|default(0) %}
+{% set target_downloads_timeout = target_deploy_timeout|default(20) %}
 {% set target_deploy_timeout = target_deploy_timeout|default(40) %}
 {% set TARGET_BOOT_TIMEOUT = TARGET_BOOT_TIMEOUT|default(15)|int %}
 {% set test_timeout = test_timeout|default(60) %}
