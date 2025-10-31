@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "lava-test-plans"
-authors = [{name = "Anders Roxell", email = "anders.roxell@linaro.org"}]
+authors = [{name = "Milosz Wasilewski", email = "milosz.wasilewski@oss.qualcomm.com"}]
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
@@ -25,4 +25,4 @@ lava-test-plans = "lava_test_plans.__main__:main"
 name = "lava_test_plans"
 
 [project.urls]
-Source = "https://github.com/linaro/lava-test-plans"
+Source = "https://github.com/qualcomm-linux/lava-test-plans"

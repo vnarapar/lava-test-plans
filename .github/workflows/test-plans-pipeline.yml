@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6]
+        python-version: ['3.12']
 
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.x'
+          python-version: ${{ matrix.python-version}}
 
       - name: Install deps
         run: |
@@ -23,7 +23,7 @@ jobs:
          pip install flit
          pip install tuxpkg
          pip install py
-         pip install pytest==8.0.0
+         pip install pytest==8.4.2
          pip install pytest-cov
          pip install pytest-parallel
          export FLIT_ROOT_INSTALL=1

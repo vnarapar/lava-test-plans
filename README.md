@@ -1,5 +1,5 @@
-![Build Status](https://github.com/Linaro/lava-test-plans/actions/workflows/test-plans-pipeline.yml/badge.svg)
-![REUSE Compliance Check](https://github.com/Linaro/lava-test-plans/actions/workflows/reuse.yml/badge.svg)
+![Build Status](https://github.com/qualcomm-linux/lava-test-plans/actions/workflows/test-plans-pipeline.yml/badge.svg)
+![REUSE Compliance Check](https://github.com/qualcomm-linux/lava-test-plans/actions/workflows/reuse.yml/badge.svg)
 
 # lava-test-plans
 
@@ -8,18 +8,10 @@ It generates the LAVA job definition file from a set of templates.
 
 # Installation
 
-Install lava-test-plans from pip:
+Install lava-test-plans from this repository
 
-    lava-test-plans -h
-
-or
-
-via podman/docker:
-
-    docker run -i -t lavasoftware/lava-test-plans /bin/bash
-
-lavasoftware/lava-test-plans:latest points to the latest released version.
-lavasoftware/lava-test-plans:master points to the latest development.
+    virtualenv -p python3 venv
+    pip install .
 
 If the above commands succeed, you can run to check that the program starts correctly
 
@@ -29,24 +21,8 @@ If the above commands succeed, you can run to check that the program starts corr
 
 To install the latest development version:
 
-    git clone https://github.com/Linaro/lava-test-plans.git
+    git clone https://github.com/qualcomm-linux/lava-test-plans.git
     cd ./lava-test-plans
-
-    pip3 install flit
-    flit install --symlink
-
-or
-
-You need to do if you have docker installed:
-
-    docker run --volume $HOME/path/to/lava-test-plans:/xyz -i -t lavasoftware/lava-test-plans /bin/bash
-    cd /xyz
-
-lavasoftware/lava-test-plans:latest points to the latest released version.
-lavasoftware/lava-test-plans:master points to the latest development.
-
-There will be a directory with /lava-test-plans from either a "released"
-version or directly from master.
 
 If the above commands succeed, you can run to check that the program starts correctly
 
@@ -96,11 +72,5 @@ Overall job timeout is a sum of action timeouts. There are 6 components:
 
 When LXC is not in use all *lxc_* timeouts are set to 0. *test_timeout* is defined for each test template. *target_* timeouts can be set separately for each device.
 
-# CI for docker multiarch builds
-lava-test-plans gets mirrored to gitlab
-https://gitlab.com/Linaro/lava-test-plans to build multiarch docker containers
-and publish them to https://hub.docker.com/r/lavasoftware/lava-test-plans, that
-is why there is a .gitlab-ci.yml in this repository.
-
 # Repository
-Pull requests are welcome to https://github.com/linaro/lava-test-plans.
+Pull requests are welcome to https://github.com/qualcomm-linux/lava-test-plans.

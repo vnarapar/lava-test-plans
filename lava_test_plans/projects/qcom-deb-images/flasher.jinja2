@@ -1,0 +1,17 @@
+{% extends "include/flasher.jinja2" %}
+
+{% set device_type = "debian-" + device_type %}
+
+{% block deploy_target %}
+{{ super() }}
+{% endblock deploy_target %}
+
+{% block metadata %}
+  source: https://github.com/Linaro/lava-test-plans.git
+  path: projects/qcom-deb-images/
+{% include PROJECT+"include/qcom-deb-images-metadata.jinja2" %}
+{% endblock metadata %}
+
+{% block context %}
+  test_character_delay: 10
+{% endblock context %}

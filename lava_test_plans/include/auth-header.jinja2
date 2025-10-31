@@ -1,0 +1,5 @@
+        {% if AUTH_HEADER_NAME is defined and AUTH_HEADER_TOKEN is defined %}
+        headers:
+          {{ AUTH_HEADER_NAME }}: {{ AUTH_HEADER_TOKEN }}
+        {% endif %}
+
