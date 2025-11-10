@@ -284,6 +284,11 @@ def main():
         dest="dryrun",
     )
     parser.add_argument(
+        "--dry-run-path",
+        help="""Path to the directory where rendered templates will be saved""",
+        dest="dry_run_path",
+    )
+    parser.add_argument(
         "--test-lava-validity",
         help="""Test generated templates using LAVA container validator""",
         action="store_true",
@@ -321,6 +326,8 @@ def main():
     exit_code = 0
 
     output_path = os.path.abspath(os.path.join(script_dirname, "..", "tmp"))
+    if args.dry_run_path:
+        output_path = os.path.abspath(args.dry_run_path)
 
     if not os.path.isabs(args.testplan_path):
         if not os.path.isdir(args.testplan_path):
