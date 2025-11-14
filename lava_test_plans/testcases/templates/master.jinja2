@@ -9,7 +9,7 @@
 {# with the BUILD_NUMBER in the middle, it's possible to get #}
 {# the sub job name(which is the test_name here) #}
 {# from this lava job name information #}
-{% block job_name %}{{PROJECT_NAME}}-{{OS_INFO}}-{{KERNEL_BRANCH}}-{{BUILD_NUMBER}}-{{test_name}}{% endblock job_name %}
+{% block job_name %}{{PROJECT_NAME}}-{{OS_INFO}}-{{BUILD_NUMBER}}-{{test_name}}{% endblock job_name %}
 
 {% block context %}
 {{ super() }}
