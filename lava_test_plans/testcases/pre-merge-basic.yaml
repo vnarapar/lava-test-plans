@@ -10,10 +10,6 @@
       path: Runner/suites/Kernel/Baseport/hotplug/hotplug.yaml
       repository: {{ TEST_DEFINITIONS_REPOSITORY }}
     - from: git
-      name: "remoteproc"
-      path: Runner/suites/Kernel/Baseport/remoteproc/remoteproc.yaml
-      repository: {{ TEST_DEFINITIONS_REPOSITORY }}
-    - from: git
       name: "CPUFreq_Validation"
       path: Runner/suites/Kernel/Baseport/CPUFreq_Validation/CPUFreq_Validation.yaml
       repository: {{ TEST_DEFINITIONS_REPOSITORY }}
